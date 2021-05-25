@@ -1,4 +1,19 @@
+.header::after {
+  background-image: none;
+}
 
+ion-toolbar {
+  --background-color: transparent;
+  --ion-color-base: transparent !important;
+  padding-top: 25px;
+}
+
+#map {
+  // height: 83%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 
 #container {
   text-align: center;
@@ -29,3 +44,6 @@
 }
 
 
+ion-tab-button {
+  padding: 5px;
+}

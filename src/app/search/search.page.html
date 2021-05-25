@@ -1,11 +1,21 @@
+<!-- <ion-header [translucent]="true">
+  <ion-row style="height: 25px"></ion-row>
+</ion-header> -->
 <ion-header no-border color="translucent"></ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- <ion-header>
+    <ion-searchbar></ion-searchbar>
+  </ion-header> -->
   <ion-toolbar slot="fixed" color="translucent">
     <ion-searchbar color="light" placeholder="Search Location"></ion-searchbar>
   </ion-toolbar>
 
-  <p>this is the home page</p>
+  <div #map id="map">
+    <!-- <app-google-maps></app-google-maps> -->
+    <!-- <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+  </div>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">

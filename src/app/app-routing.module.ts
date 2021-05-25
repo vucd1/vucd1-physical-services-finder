@@ -4,33 +4,37 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
   },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
-  },
-  {
-    path: 'bookmarks',
-    loadChildren: () => import('./bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },
+  // {
+  //   path: 'welcome',
+  //   loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  // },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  // },
+  // {
+  //   path: 'signup',
+  //   loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  // },
+  // {
+  //   path: 'bookmarks',
+  //   loadChildren: () => import('./bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
+  // },
+  // {
+  //   path: 'profile',
+  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  // },
+  // {
+  //   path: 'search',
+  //   loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  // },
 ];
 
 @NgModule({

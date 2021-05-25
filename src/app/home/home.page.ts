@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+
+declare var google: any;
 
 @Component({
   selector: 'app-home',
