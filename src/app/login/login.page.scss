@@ -2,6 +2,13 @@ ion-content{
     --background: #1C274C !important;
   }
 
+  // input styling 
+  .input{
+    border: 2px solid #FFFFFF;
+    border-radius: 9px;
+  }
+
+// Login message
   #login-message{
     font-size: 1.6rem;
     color: azure;
@@ -15,37 +22,27 @@ ion-content{
     line-height: 54px;
   }  
 
+// sign-in fields
   #username-field{
-      /* Group 4 */
-
     position: absolute;
     width: 250px;
     height: 35px;
     left: 12px;
     top: 200px;
 
-
-    border: 2px solid #FFFFFF;
-    border-radius: 9px;
-
   }
 
   #password-field{
- 
     position: absolute;
     width: 250px;
     height: 35px;
     left: 12px;
     top: 250px;
 
-    border: 2px solid #FFFFFF;
-    border-radius: 9px;
-
   }
 
-  #check{
 
-
+  ion-checkbox{
     position: absolute;
     width: 18px;
     height: 18px;
@@ -57,9 +54,8 @@ ion-content{
 
   }
 
+  // No account - Sign up option
   #stay-signed-in{
-
-
     position: absolute;
     width: 155px;
     height: 27px;
@@ -75,6 +71,7 @@ ion-content{
 
   }
   
+  // Forgot password - reset option
   #reset-password{
 
     position: absolute;
@@ -94,6 +91,7 @@ ion-content{
 
   }
 
+// Login button
   #login{
     position: absolute;
     width: 130px;
@@ -102,7 +100,7 @@ ion-content{
     top: 340px;
   }
 
-  
+// sign up option
   #sign-up{
     color: azure;
     position: absolute;
