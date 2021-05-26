@@ -1,9 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>welcome</ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  
+  <ion-text id="welcome-message">Welcome to ZotSpot <ion-icon name="compass"></ion-icon></ion-text>
+  
+  <ion-button id="button-1" class="primary" routerLink="/login">Login</ion-button>
+  <ion-button id="button-2" class="secondary">Sign Up</ion-button>
+  <ion-button id="button-3" class="secondary">Browse as Guest</ion-button>
 
 </ion-content>

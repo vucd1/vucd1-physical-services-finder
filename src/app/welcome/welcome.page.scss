@@ -1,0 +1,61 @@
+.header::after {
+    background-image: none;
+  }
+
+  ion-content{
+    --background: #1C274C !important;
+  }
+  
+  #welcome-message{
+    font-size: 20px;
+    color: azure;
+    position: absolute;
+    width: 246px;
+    height: 108px;
+    left: 28px;
+    top: 165px;
+    font-style: normal;
+    font-size: 35px;
+    // font-weight: bold;
+    line-height: 54px;
+  }
+
+
+  #button-1{      
+    position: absolute;
+    width: 225px;
+    height: 35px;
+    left: 25px;
+    top: 300px;
+  }
+
+  #button-2{  
+    position: absolute;
+    width: 225px;
+    height: 35px;
+    left: 25px;
+    top: 355px;
+  }
+
+  #button-3{    
+    position: absolute;
+    width: 225px;
+    height: 35px;
+    left: 25px;
+    top: 405px;
+}
+  
+  .primary{
+    //login button 
+    --background: azure !important;
+    color: #1C274C !important;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+  .secondary{
+    // sign up and guest button
+    --background: rgba(255,255,255,0) !important;
+    opacity: 100%;
+    color: azure;
+    border: 2px solid #FFFFFF;
+    border-radius: 9px;
+  }
