@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+  
+<ion-content>
+  <ion-text id="sign-up-message">Sign up for ZotSpot<ion-icon name="compass"></ion-icon></ion-text>
+
+  <ion-input id="name-field" class="input" placeholder="Name" color="light"></ion-input>
+  <ion-input id="username-field" class="input" placeholder="Email" color="light"></ion-input>
+  <ion-input id="password-field" class="input" placeholder="Password" color="light"></ion-input>
+  
+  <ion-text id="login">Already have an account? <a routerLink="/login"><b>Log in</b></a></ion-text>
+  
+  <ion-button id="sign-up" class="primary" routerLink="/login">Sign up</ion-button>
+  
 </ion-content>
