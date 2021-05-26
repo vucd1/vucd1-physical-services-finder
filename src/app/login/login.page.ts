@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupPage } from '../signup/signup.page';
 
 @Component({
   selector: 'app-login',
