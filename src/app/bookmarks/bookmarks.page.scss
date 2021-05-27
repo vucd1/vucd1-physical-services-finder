@@ -1,3 +1,7 @@
+.header::after {
+    background-image: none;
+    --background: azure;
+  }
 ion-content {
     --offset-bottom: auto!important;
     --overflow: hidden;
