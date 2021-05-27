@@ -16,19 +16,6 @@ const routes: Routes = [
             pathMatch: 'full'
           }
         ]
-      },
-      {
-        path: 'search',
-        children: [
-          {
-            path: 'search',
-            loadChildren: () => import('../search/search.module').then( m => m.SearchPageModule)
-          }
-        ]
-      },
-      {
-        path: 'bookmarks',
-        loadChildren: () => import('../bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
       }
     ]
   }
