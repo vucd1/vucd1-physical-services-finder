@@ -1,16 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button color = "dark" icon="chevron-back"></ion-back-button>
-      <ion-title>bookmarks</ion-title>
-    </ion-buttons>    <!-- <ion-title>bookmarks</ion-title> -->
+      <ion-back-button mode="md" color = "primary" icon="chevron-back"></ion-back-button>
+      <ion-title mode="md">Bookmarks</ion-title>
+    </ion-buttons>    
   </ion-toolbar>
 </ion-header>
-<h1>Sort: Default▼</h1>
 <ion-content mode="md">
-  <!-- <ion-toolbar>
-    <ion-title size="large">Bookmarks</ion-title>
-  </ion-toolbar> -->
+  <h1>Sort: Default▼</h1>
+
   <ion-card>
     <ion-card-header>
       <img [src]="'/assets/imgs/fillingStation.png'" width="70" height="70">
@@ -68,46 +66,27 @@
     </ion-card-header>
   </ion-card>
 
-<!--   
-  <ion-card>
-    <ion-item href="#" class="ion-activated">
-      <ion-icon name="wifi" slot="start"></ion-icon>
-      <ion-label>Card Link Item 1 activated</ion-label>
-    </ion-item>
-  
-    <ion-item href="#">
-      <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
-    </ion-item>
-  
-    <ion-item class="ion-activated">
-      <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>Card Button Item 1 activated</ion-label>
-    </ion-item>
-  
-    <ion-item>
-      <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>Card Button Item 2</ion-label>
-    </ion-item>
-  </ion-card> -->
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-
-      <ion-tab-button tab="home" routerLink="/home">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="search" routerLink="/search">
-        <ion-icon name="search-outline"></ion-icon>
-        <ion-label>Search</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="bookmarks">
-        <ion-icon name="bookmark-outline"></ion-icon>
-        <ion-label>Bookmarks</ion-label>
-      </ion-tab-button>
-
-    </ion-tab-bar>
-  </ion-tabs>
 </ion-content>
+<ion-toolbar>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search" routerLink="/search">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="bookmarks">
+      <ion-icon name="bookmark-outline"></ion-icon>
+      <ion-label>Bookmarks</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
