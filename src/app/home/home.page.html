@@ -12,22 +12,23 @@
   <ion-card id="card-1" class="categories">
       <ion-card-content>     
         <ion-card-title style= color:azure>Washrooms</ion-card-title>
-        <img [src]="'/assets/imgs/Restroom-Icon.png'" width="48" height="35">
+        <img [src]="'/assets/imgs/Restroom-Icon.png'" width="48" height="40">
     </ion-card-content>
   </ion-card>
   
     <ion-card id="card-2" class="categories">
       <ion-card-content>     
         <ion-card-title>Food</ion-card-title>
-        <img [src]="'/assets/imgs/Food-Icon.png'" width="33" height="30">
+        <img [src]="'/assets/imgs/Food-Icon.png'" width="33" height="32">
     </ion-card-content>
   </ion-card>
 </ion-col>
+
 <ion-col size-xs="6">
     <ion-card id="card-3" class="categories">
       <ion-card-content>     
       <ion-card-title>Water Fountains</ion-card-title>
-        <img [src]="'/assets/imgs/local_drink_white.png'" width="43" height="40">
+        <img [src]="'/assets/imgs/local_drink_white.png'" width="40" height="42">
     </ion-card-content>
   </ion-card>
 
@@ -37,61 +38,22 @@
         <img [src]="'/assets/imgs/Libraries.png'" width="38" height="35">
     </ion-card-content>
     </ion-card>
+
   </ion-col>
   </ion-row></ion-grid>
 
   <h5>More Categories</h5>
-  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content> -->
-    <ion-item> 
-  <ion-label>
-    Study Spaces
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Computer Labs
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item>
-
-
-<!-- 
-<ion-item>
-  <ion-label>
-    Parking Lots
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Lecture Halls
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Bike Ramps
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item> -->
-<!-- 
-<ion-item>
-  <ion-label>
-    placeholder
-    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="10">
-  </ion-label>
-</ion-item> -->
-<!-- 
-</ion-infinite-scroll-content>
-</ion-infinite-scroll> -->
   
-  <!-- <app-navbar></app-navbar> -->
-  
+<ion-item *ngFor="let name of categories">
+  <ion-label>
+    {{name}}
+    <img [src]="'/assets/imgs/pushpin.svg'" width="10" height="12" >
+  </ion-label>
+</ion-item>
+
+
+</ion-content>
+<ion-toolbar>
 <ion-tabs>
   <ion-tab-bar slot="bottom">
 
@@ -112,4 +74,4 @@
 
   </ion-tab-bar>
 </ion-tabs>
-</ion-content>
+</ion-toolbar>

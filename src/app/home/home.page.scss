@@ -3,19 +3,20 @@
   --background: azure;
 }
 
-ion-content{
-  // --offset-bottom: auto!important;
-  // --overflow: hidden;
-  // overflow: auto;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
+ion-content {
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  background: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   
 }
 
 h1{
   text-align: center;
-  margin-top: 3.8em;
+  margin-top: 3em;
   margin-bottom: 0em;
   color: #5A6DA4;
 }
@@ -72,19 +73,38 @@ border-radius: 28px;
 
 }
 
+ion-grid{
+  --ion-grid-padding: 5px;
+}
+
 ion-card-title{
-
-
+position: static;
+margin-right: 1em;
 font-style: normal;
 font-weight: bold;
 font-size: 15px;
-line-height: 24px;
 display: flex;
-text-align: center;
 
 color: #FFFFFF;
 }
 
+#card-1{
+  margin-top: 0em;
+  margin-left: .3em;
+  margin-right: .3em;
+}
+#card-2{
+  margin-left: .3em;
+  margin-right: .3em;
+}
+#card-3{
+  margin-top: 0em;
+  margin-left: .3em;
+}
+#card-4{
+  margin-left: .3em;
+}
+ 
 // toolbar
 ion-toolbar {
   --background-color: transparent;

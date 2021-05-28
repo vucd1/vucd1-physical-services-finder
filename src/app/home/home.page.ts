@@ -8,7 +8,7 @@ declare var google: any;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  categories = ['Study Spaces', 'Computer Labs', 'Parking Structures', 'Parking Lots', 'Lecture Halls', 'Bike Ramps', 'Water Refill Stations']
   constructor() {}
 
 }
