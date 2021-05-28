@@ -3,6 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button mode="md" color = "primary" icon="chevron-back"></ion-back-button>
       <ion-title mode="md">Bookmarks</ion-title>
+      <button style="background-color: white;padding-left: 12%;">
+        <ion-icon name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
+      </button>
     </ion-buttons>    
   </ion-toolbar>
 </ion-header>
@@ -13,7 +16,7 @@
       <img [src]="'/assets/imgs/fillingStation.png'" width="70" height="70">
       <ion-card-title>Water Filling Station 
         <h5>Rowland Hall, Near First Floor Elevator</h5>
-        <button class = "bookmarkBtns" style="margin-left: 85%; background-color: white;">
+        <button class = "bookmarkBtns">
           <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
@@ -24,7 +27,7 @@
       <img [src]="'/assets/imgs/restroom.png'" width="70" height="70">
       <ion-card-title>Restroom 
         <h5>Anteater Recreation Center	Room #104</h5>
-        <button class = "bookmarkBtns" style="margin-left: 85%; background-color: white;">
+        <button class = "bookmarkBtns">
           <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
@@ -36,7 +39,7 @@
       <img [src]="'/assets/imgs/langsonLib.png'" width="70" height="70">
       <ion-card-title>Langson Library 
         <h5>23 W Peltason Dr, Irvine CA 92670</h5>
-        <button class = "bookmarkBtns" style="margin-left: 85%; background-color: white;">
+        <button class = "bookmarkBtns">
           <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
@@ -47,7 +50,7 @@
       <img [src]="'/assets/imgs/PhoenixFoodCourt.png'" width="70" height="70">
       <ion-card-title>Phoenix Food Court 
         <h5>Ring Rd, Irvine, CA 92697</h5>
-        <button class = "bookmarkBtns" style="margin-left: 85%; background-color: white;">
+        <button class = "bookmarkBtns">
           <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
@@ -59,7 +62,7 @@
       <img [src]="'/assets/imgs/bikeParking.png'" width="70" height="70">
       <ion-card-title>Bike Parking 
         <h5>Engineering Tower, Irvine, CA 92697</h5>
-        <button class = "bookmarkBtns" style="margin-left: 85%; background-color: white;">
+        <button class = "bookmarkBtns">
           <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
@@ -72,17 +75,17 @@
   <ion-tab-bar slot="bottom">
 
     <ion-tab-button tab="home" routerLink="/home">
-      <ion-icon name="home-outline"></ion-icon>
+      <ion-icon name="home-outline" size="small"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="search" routerLink="/search">
-      <ion-icon name="search-outline"></ion-icon>
+      <ion-icon name="search-outline" size="small"></ion-icon>
       <ion-label>Search</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="bookmarks">
-      <ion-icon name="bookmark-outline"></ion-icon>
+      <ion-icon name="bookmark-outline" size="small"></ion-icon>
       <ion-label>Bookmarks</ion-label>
     </ion-tab-button>
 
