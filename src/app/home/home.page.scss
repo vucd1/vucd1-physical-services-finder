@@ -16,7 +16,7 @@ ion-content {
 
 h1{
   text-align: center;
-  margin-top: 3em;
+  margin-top: 3.3em;
   margin-bottom: 0em;
   color: #5A6DA4;
 }
@@ -45,7 +45,22 @@ mix-blend-mode: normal;
 box-sizing: border-box;
 border-radius: 28px;
 
-
+.pattern-1{
+  position: absolute;
+  float: left;
+  opacity: 20%;
+  margin-top: 1.6em;
+  width: 510px;
+  height: 50px;
+}
+.pattern-2{
+  position: absolute;
+  // float: right;
+  opacity: 30%;
+  margin-top: 1.6em;
+  width: 510px;
+  height: 50px;
+}
 // /* Vector */
 
 // position: absolute;
@@ -78,8 +93,9 @@ ion-grid{
 }
 
 ion-card-title{
-position: static;
-margin-right: 1em;
+text-align: center;
+ 
+// margin-right: 1em;
 font-style: normal;
 font-weight: bold;
 font-size: 15px;
