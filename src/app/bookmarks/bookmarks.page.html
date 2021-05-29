@@ -9,63 +9,20 @@
     </ion-buttons>    
   </ion-toolbar>
 </ion-header>
+
 <ion-content mode="md">
   <!-- <h1>Sort: Default▼</h1> -->
-  <ion-card>
+  <ion-card *ngFor='let location of bookmarked; let i = index' >
+    <ion-card-content *ngIf='location.bookmark==true'>
     <ion-card-header>
-      <img [src]="'/assets/imgs/fillingStation.png'" width="70" height="70">
-      <ion-card-title>Water Filling Station 
-        <h5>Rowland Hall, Near First Floor Elevator</h5>
+      <img src={{location.img}} width="70" height="70">
+      <ion-card-title>{{location.name}}
+        <h5>{{location.address}}</h5>
         <button class = "bookmarkBtns">
-          <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
+          <ion-icon id = {{i}} (click)="onClick($event)" name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
     </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <img [src]="'/assets/imgs/restroom.png'" width="70" height="70">
-      <ion-card-title>Restroom 
-        <h5>Anteater Recreation Center	Room #104</h5>
-        <button class = "bookmarkBtns">
-          <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  
-  <ion-card>
-    <ion-card-header>
-      <img [src]="'/assets/imgs/langsonLib.png'" width="70" height="70">
-      <ion-card-title>Langson Library 
-        <h5>23 W Peltason Dr, Irvine CA 92670</h5>
-        <button class = "bookmarkBtns">
-          <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <img [src]="'/assets/imgs/PhoenixFoodCourt.png'" width="70" height="70">
-      <ion-card-title>Phoenix Food Court 
-        <h5>Ring Rd, Irvine, CA 92697</h5>
-        <button class = "bookmarkBtns">
-          <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-
-  <ion-card>
-    <ion-card-header>
-      <img [src]="'/assets/imgs/bikeParking.png'" width="70" height="70">
-      <ion-card-title>Bike Parking 
-        <h5>Engineering Tower, Irvine, CA 92697</h5>
-        <button class = "bookmarkBtns">
-          <ion-icon name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
-      </ion-card-title>
-    </ion-card-header>
+    </ion-card-content>
   </ion-card>
 
 </ion-content>
