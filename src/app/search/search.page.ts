@@ -35,13 +35,10 @@ export class SearchPage implements OnInit {
       longitude: "-117.8411204664242"
     }
   ];
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  
   ionViewDidEnter() {
     this.showMap();
   }
@@ -60,7 +57,6 @@ export class SearchPage implements OnInit {
       this.addInfoWindowToMarker(mapMarker);
     }
   }
-
   addInfoWindowToMarker(marker) {
     let infoWindowContent = '<div id="content">' +
                               '<h2 id="firstHeading" class"firstHeading">' + marker.title + '</h2>' +
