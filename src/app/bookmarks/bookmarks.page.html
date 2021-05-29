@@ -20,14 +20,14 @@
   <div *ngFor='let location of bookmarked; let i = index' >
   <ion-card  *ngIf='location.bookmark==true'>
     <ion-card-content>
-    <ion-card-header>
+    <!-- <ion-card-header> -->
       <img src={{location.img}} width="70" height="70">
       <ion-card-title>{{location.name}}
         <h5>{{location.address}}</h5>
         <button class = "bookmarkBtns">
           <ion-icon id = {{i}} (click)="onClick($event)" name="bookmark" size="small" style="color: #2C488B;"></ion-icon></button>
       </ion-card-title>
-    </ion-card-header>
+    <!-- </ion-card-header> -->
     </ion-card-content>
   </ion-card>
   </div>
