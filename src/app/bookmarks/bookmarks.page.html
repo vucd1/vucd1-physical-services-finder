@@ -14,11 +14,11 @@
   
   <!-- <h1>Sort: Default▼</h1> -->
   <div *ngIf="bookmarkedcopy.length == 0">
-  <h2>You have no bookmarks saved.</h2>
+  <h2>You have no bookmarks saved</h2>
   <img [src] = "'/assets/imgs/empty_2.png'" width="120" height="120" style="opacity: 25%; margin-left: 4.8em;">
   </div>
   <div *ngFor='let location of bookmarked; let i = index' >
-  <ion-card  *ngIf='location.bookmark==true'>
+  <ion-card button *ngIf='location.bookmark==true'>
     <ion-card-content>
     <!-- <ion-card-header> -->
       <img src={{location.img}} width="70" height="70">

@@ -1,4 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../popover/popover.component';
 declare var google: any;
 
 @Component({
@@ -16,7 +18,8 @@ export class HomePage {
   inputVal="";
   show=false;
   resLen=0;
-  constructor() {}
+
+  constructor(public popoverController: PopoverController) {}
   ngOnInit() {
 
     this.getResults();
@@ -48,4 +51,17 @@ export class HomePage {
   }
 
   
+  
+  async presentPopover(event: Event) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      cssClass: 'my-custom-class',
+      event: event,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 }
