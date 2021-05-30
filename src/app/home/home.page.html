@@ -2,8 +2,15 @@
 
 <ion-content >
   <ion-toolbar slot="fixed" color="translucent">
-    <ion-searchbar color="light" placeholder="Search Location"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="inputVal" (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
+    <ion-list *ngIf="show === true">
+      <ion-item *ngFor="let res of searchResults">
+        {{res.place}}
+      </ion-item>
+    </ion-list>
   </ion-toolbar>
+
+ 
 
   <h1>Welcome</h1>
 
