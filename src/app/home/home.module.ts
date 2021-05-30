@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { PopoverComponent } from '../popover/popover.component';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -16,6 +17,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule
   ],
   declarations: [HomePage,
-    NavbarComponent]
+    NavbarComponent, 
+    PopoverComponent]
 })
 export class HomePageModule {}

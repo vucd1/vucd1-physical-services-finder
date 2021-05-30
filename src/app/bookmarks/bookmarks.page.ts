@@ -11,7 +11,6 @@ export class BookmarksPage implements OnInit {
   {img: '/assets/imgs/langsonLib.png', name: 'Langson Library', address: '23 W Peltason Dr, Irvine CA 92670', bookmark: true},
   {img: '/assets/imgs/PhoenixFoodCourt.png', name: 'Phoenix Food Court', address: 'Ring Rd, Irvine, CA 92697', bookmark: true},
   {img: '/assets/imgs/bikeParking.png', name: 'Bike Parking', address: 'Engineering Tower, Irvine, CA 92697',  bookmark: true}]
-  allFalse:boolean = true;
   bookmarkedcopy = this.bookmarked.slice()
 
   constructor() { 
@@ -26,19 +25,7 @@ export class BookmarksPage implements OnInit {
   onClick(event: Event){
     let e = event.target as HTMLButtonElement;
     this.bookmarked[e.id].bookmark = false;
-    console.log(e.id)
-    
     this.bookmarkedcopy.pop((this.bookmarked)[e.id]);
-    console.log(this.bookmarkedcopy);
-    // this.bookmarked.forEach(bookmark => {
-    //   if(bookmark.bookmark == true){
-    //     this.allFalse = false;
-    //   }
-    // });
-    // // if (this.allFalse == true){
-    // //   console.log('No bookmarks');
-    // // }
-    // console.log(this.allFalse);
   }
   
   
