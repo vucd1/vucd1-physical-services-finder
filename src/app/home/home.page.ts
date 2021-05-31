@@ -9,7 +9,7 @@ declare var google: any;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  categories = ['Study Spaces', 'Computer Labs', 'Parking Structures', 'Parking Lots', 'Lecture Halls', 'Bike Ramps', 'Water Refill Stations']
+  categories = ['Study Spaces', 'Computer Labs', 'Parking', 'Gyms','Lecture Halls', 'Bike Ramps', 'Water Refill Stations']
   allResults = [
     {"place":"Mesa Court Gym","category":"Gym","dist":"2.69 mi"},
     {"place":"Anteater Rec Center","category":"Gym","dist":"5 mi"},
@@ -62,6 +62,5 @@ export class HomePage {
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 }

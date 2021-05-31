@@ -39,10 +39,11 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },  {
-    path: 'category-page',
-    loadChildren: () => import('./category-page/category-page.module').then( m => m.CategoryPagePageModule)
   },
+  {
+    path: 'categories',
+    loadChildren: () => import('./category-page/category-page.module').then( m => m.CategoryPagePageModule)
+  }
 
 ];
 

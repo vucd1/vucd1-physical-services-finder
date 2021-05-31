@@ -3,7 +3,7 @@
   <ion-toolbar >
     <ion-searchbar animated mode="md" [(ngModel)]="inputVal" (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
     <ion-list *ngIf="show === true">
-      <ion-item *ngFor="let res of searchResults">
+      <ion-item button detail = false *ngFor="let res of searchResults" >
         {{res.place}}
       </ion-item>
     </ion-list>
@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 
-  <ion-content>
+  <ion-content >
 
   <h2>Welcome</h2>
 
@@ -51,7 +51,7 @@
     </ion-card-content>
   </ion-card>
 
-    <ion-card button color="primary" id="card-4" class="categories">
+    <ion-card button color="primary" id="card-4" class="categories" routerLink="/categories">
       <ion-card-title style="margin-top: 1em; margin-left: 1.7em;">Libraries</ion-card-title>
       <img class="pattern-1" [src]="'/assets/imgs/pattern_1.png'">
       <img class="pattern-2" [src]="'/assets/imgs/pattern_2.png'">
@@ -90,7 +90,7 @@
       <ion-label>Search</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="bookmarks" routerLink="/bookmark">
+    <ion-tab-button tab="bookmarks" routerLink="/bookmarks">
       <ion-icon name="bookmark-outline" size="small"></ion-icon>
       <ion-label>Bookmarks</ion-label>
     </ion-tab-button>
