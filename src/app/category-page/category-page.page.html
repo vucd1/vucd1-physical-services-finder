@@ -1,0 +1,27 @@
+<ion-header no-border color="translucent">
+  <ion-toolbar >
+  <ion-searchbar animated mode="md" [(ngModel)]="inputVal"  color="light" placeholder="Search Location"></ion-searchbar>
+
+  <ion-buttons slot="end">  <button style="background-color: white;padding-left: 12%;">
+    <ion-icon (click)="presentPopover($event)" name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
+  </button></ion-buttons> 
+</ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2>Libraries</h2>
+  <ion-list>
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>ion-item in a card, icon left, button right</ion-label>
+        <ion-button fill="outline" slot="end">View</ion-button>
+      </ion-item>
+    
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>
