@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button mode="md" color = "primary" icon="chevron-back"></ion-back-button>
       <ion-title mode="md">Bookmarks</ion-title>
-      <button style="background-color: white;padding-left: 12%;">
-        <ion-icon name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
-      </button>
+      <ion-buttons slot="end"><button style="background-color: white;margin-left: 80%;">
+        <ion-icon (click)="presentPopover($event)" name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
+      </button></ion-buttons> 
     </ion-buttons>    
   </ion-toolbar>
 </ion-header>

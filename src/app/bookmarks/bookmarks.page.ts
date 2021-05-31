@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+
+import { PopoverComponent } from '../popover/popover.component';
 
 @Component({
   selector: 'app-bookmarks',
@@ -13,7 +16,7 @@ export class BookmarksPage implements OnInit {
   {img: '/assets/imgs/bikeParking.png', name: 'Bike Parking', address: 'Engineering Tower, Irvine, CA 92697',  bookmark: true}]
   bookmarkedcopy = this.bookmarked.slice()
 
-  constructor() { 
+  constructor(public popoverController: PopoverController) { 
     
   }
   
@@ -28,5 +31,16 @@ export class BookmarksPage implements OnInit {
     this.bookmarkedcopy.pop((this.bookmarked)[e.id]);
   }
   
-  
+  async presentPopover(event: Event) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      cssClass: 'my-custom-class',
+      event: event,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 }

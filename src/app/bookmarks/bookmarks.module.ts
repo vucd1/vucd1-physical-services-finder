@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BookmarksPageRoutingModule } from './bookmarks-routing.module';
 
 import { BookmarksPage } from './bookmarks.page';
+import { PopoverComponent } from '../popover/popover.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { BookmarksPage } from './bookmarks.page';
     IonicModule,
     BookmarksPageRoutingModule
   ],
-  declarations: [BookmarksPage]
+  declarations: [BookmarksPage,PopoverComponent]
 })
 export class BookmarksPageModule {}
