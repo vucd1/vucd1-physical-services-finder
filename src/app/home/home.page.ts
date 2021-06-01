@@ -9,7 +9,7 @@ declare var google: any;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  categories = ['Study Spaces', 'Computer Labs', 'Parking', 'Gyms','Lecture Halls', 'Bike Ramps', 'Water Refill Stations']
+  categories = ['Study Spaces', 'Computer Labs', 'Parking - Free', 'Parking - Paid', 'Gyms', 'Lecture Halls', 'Bike Ramps', 'Water Refill Stations']
   allResults = [
     {"place":"Mesa Court Gym","category":"Gym","dist":"2.69 mi"},
     {"place":"Anteater Rec Center","category":"Gym","dist":"5 mi"},
@@ -50,8 +50,6 @@ export class HomePage {
 
   }
 
-  
-  
   async presentPopover(event: Event) {
     const popover = await this.popoverController.create({
       component: PopoverComponent,

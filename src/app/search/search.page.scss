@@ -7,6 +7,19 @@ ion-toolbar {
     --ion-color-base: transparent !important;
     padding-top: 25px;
   }
+
+  #toggle{
+    top:5em;
+    position: relative;
+  }
+ion-searchbar {
+  margin: auto;
+  // flex-basis: 2px;
+  // float: left;
+  --icon-color: #5A6DA4;
+  // --border: 2px solid #5A6DA4;
+  --border-radius: 20px;
+  }
   
   #map {
     // height: 83%;
