@@ -9,20 +9,19 @@
 </ion-header>
 <ion-content>
   <h2>Libraries</h2>
-  <ion-list>
-    <ion-card>
-      <ion-item>
-        <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>ion-item in a card, icon left, button right</ion-label>
-        <ion-button fill="outline" slot="end">View</ion-button>
-      </ion-item>
     
+  <div *ngFor='let l of libs; let i = index' >
+    <ion-card>
       <ion-card-content>
-        
+      <!-- <ion-card-header> -->
+        <img src={{l.img}} width="70" height="70">
+        <ion-card-title>{{l.name}} 
+          <h5>{{l.address}}</h5>        
+        </ion-card-title>
+      <!-- </ion-card-header> -->
       </ion-card-content>
     </ion-card>
-
-  </ion-list>
+    </div>
 
 </ion-content>
 <ion-toolbar>
