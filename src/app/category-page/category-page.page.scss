@@ -1,0 +1,74 @@
+.header::after {
+    background-image: none;
+    --background: azure;
+  }
+ion-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    background: white;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+}
+
+
+ion-card-title {
+    font-size: 14px;
+    text-align: center;
+    float: right;
+    width: 110px;
+    color: #1C274C;
+    font-weight: bold;
+}
+h5{
+    font-size: 12px;
+    float: center;
+    width: 110px;
+    padding-top: 5px; 
+    padding-bottom: 10px; 
+    margin: 0;
+    color: #041A59;
+}
+h1{
+    font-size: small;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    color: #5A6DA4;
+    background: white;
+}
+
+h2{
+    
+    margin-top: 5em;    
+    font-size: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    color: #bdbdbd;
+}
+
+ion-card{
+    -webkit-box-shadow: 0px 0px 0px 5px rgba(231,231,231,1);
+    -moz-box-shadow: 0px 0px 0px 5px rgba(231,231,231,1);
+    box-shadow: 0px 0px 0px 5px rgba(231,231,231,1);
+    margin-bottom: 7%;
+    margin-left: 8%;
+    margin-right: 8%;
+
+}
+
+// ion-tabs{
+//     position: relative;
+// }
+ion-title{
+    margin-left: 17px; 
+    font-size: 20px; 
+    color: #5A6DA4;
+}
+
+.bookmarkBtns{
+    margin-left: 90%; 
+    background-color: white;
+}
