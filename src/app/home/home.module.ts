@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { PopoverComponent } from '../popover/popover.component';
+import { AccessibilityToggleComponent} from '../accessibility-toggle/accessibility-toggle.component';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -18,6 +19,8 @@ import { HomePageRoutingModule } from './home-routing.module';
   ],
   declarations: [HomePage,
     NavbarComponent, 
-    PopoverComponent]
+    PopoverComponent,
+    AccessibilityToggleComponent
+  ]
 })
 export class HomePageModule {}
