@@ -20,7 +20,29 @@
     <!-- <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
   </div>
+  
 </div>
+
+<div>
+
+</div>
+
+
+<ion-fab (click)="changeMap()" vertical="bottom" horizontal="start" slot="fixed">
+  <ion-fab-button id = 'satellite'>
+    <img [src]="'/assets/imgs/satellite.png'" width="40" height="40">
+  </ion-fab-button>
+</ion-fab>
+<!-- 
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+  <img [src]="'/assets/imgs/pin.png'" width="40" height="40">
+</ion-fab>
+ -->
+
+
+
+
 
  
 </ion-content>
@@ -42,5 +64,34 @@
       <ion-label>Bookmarks</ion-label>
     </ion-tab-button>
 
+
+
+
+
+    
+
   </ion-tab-bar>
+
+
+<!--   
 </ion-tabs></ion-toolbar>
+
+ <ion-card> 
+  <ion-item id = 'main'>
+    <ion-icon id = 'start' name="pin" slot="start"></ion-icon>
+    <ion-label>Selected Location</ion-label>
+    <ion-button fill="outline" slot="end">View</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+
+    This is content, without any paragraph or header tags,
+    within an ion-card-content element.
+
+  </ion-card-content>
+</ion-card> -->
+
+
+
+
+

@@ -2,10 +2,55 @@
 //   background-image: none;
 // }
 
+// #main
+// {
+//   padding: 2px;
+//   --ion-color-base: transparent !important;
+//   background-color: #2C488B;
+//   color: white;
+
+// }
+
+
+// .card {
+//   // color: #000; // black
+//   background-color: #2C488B;
+// }
+
+
+
+// ion-card {
+//   background-color: blue;
+//   color
+// }
+
+// ion-label{
+//   background-color: blue;
+// }
+// ion-item{
+//   background-color: blue;
+// }
+
+
 ion-toolbar {
     --background-color: transparent;
     --ion-color-base: transparent !important;
   }
+
+  
+// ion-fab-button{
+//   color: gray;
+//   background: transparent;
+
+//   // height: 20px;
+//   // width: 20px;
+  
+// }
+
+#satellite{
+  color: 5A6DA4;
+  
+}
 
   #toggle{
     top:5em;
@@ -51,7 +96,8 @@ ion-searchbar {
   
     margin: 0;
   }
-  
+
+
   #container a {
     text-decoration: none;
   }
