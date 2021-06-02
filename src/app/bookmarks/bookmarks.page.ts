@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
 import { PopoverComponent } from '../popover/popover.component';
-import { AlertController } from '@ionic/angular';
+import { AlertController, } from '@ionic/angular';
 
 
 @Component({
@@ -21,7 +21,6 @@ export class BookmarksPage implements OnInit {
   constructor(public popoverController: PopoverController,public alertController: AlertController) { 
     
   }
-  
 
   ngOnInit() {
     

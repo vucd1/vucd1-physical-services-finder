@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { BookmarksPage } from '../bookmarks/bookmarks.page';
-import { AlertController } from '@ionic/angular';
+import { AlertController,ToastController  } from '@ionic/angular';
 
 
 @Component({
@@ -21,14 +21,12 @@ searchResults:any;
 inputVal="";
 show=false; 
 resLen=0;
-booklist :BookmarksPage;
 
-constructor(public popoverController: PopoverController,public alertController: AlertController) { }
+constructor(public popoverController: PopoverController,public alertController: AlertController,public toastController: ToastController) { }
 
 
   ngOnInit() {
     this.getResults();
-
 
     console.log(this.libs);
   }
@@ -42,7 +40,8 @@ constructor(public popoverController: PopoverController,public alertController: 
     }
     else{
       this.libs[e.id].bookmark = true;
-      this.presentAlert(this.libs[e.id].name);
+      //this.presentAlert(this.libs[e.id].name);
+      this.presentToast(this.libs[e.id].name);
 
     }
   }
@@ -96,12 +95,41 @@ constructor(public popoverController: PopoverController,public alertController: 
     console.log('onDidDismiss resolved with role', role);
   }
 
+  async presentToast(place:string) {
+    const toast = await this.toastController.create({
+      header: 'Success',
+      message: place+' was added to your bookmarks',
+      position: 'top',
+      color:"dark",
+      buttons: [
+        {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    await toast.present();
+
+    const { role } = await toast.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+
+
+
+
+
+
   async presentRemoveAlert(place : String,e) {
     const alert = await this.alertController.create({
       header: 'Are you sure ',
       message: place + ' will deleted from your bookmarks',
       buttons: [{
         text: 'Yes',
+        cssClass: 'primary',
         handler: () => {
           console.log('Confirm Ok');
           this.libs[e.id].bookmark = false;

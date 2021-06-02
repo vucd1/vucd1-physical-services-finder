@@ -24,7 +24,7 @@
     </ion-item>
   </ion-list>
 
-
+  <ion-item (click)="presentPopover($event)"  style=" color: #5A6DA4;">Sort: Default▼</ion-item>
   <div *ngFor='let l of libs; let i = index' >
     <ion-card>
       <ion-card-content>
