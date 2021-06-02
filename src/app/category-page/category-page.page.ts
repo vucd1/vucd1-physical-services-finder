@@ -13,7 +13,7 @@ import { AlertController,ToastController  } from '@ionic/angular';
 export class CategoryPagePage implements OnInit {
 
   libs:any = [ {"img": '/assets/imgs/langsonLib.png', "name": 'Langson Library', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":320,"bookmark": false}
-,{"img": '/assets/imgs/gscpic.png', "name": 'Gateway Study Center', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":330, "bookmark": false}
+,{"img": '/assets/imgs/gscpic.png', "name": 'Grunigen Medical Library', "address": '101 The City Dr S, Orange, CA 92868',"dist":54330, "bookmark": false}
 ,{"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":2640, "bookmark": false}
 ,{"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":3230,"bookmark": false}];
   
