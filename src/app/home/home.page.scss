@@ -32,7 +32,7 @@ h2{
 
 h5{
   text-align: center;
-  margin-top: 1em;
+  // margin-top: .3em;
   margin-bottom: .2em;
   color: #5A6DA4;
 }
@@ -111,9 +111,12 @@ color: #FFFFFF;
 ion-toolbar {
   --background-color: transparent;
   --ion-color-base: transparent !important;
-  padding-top: 25px;
 }
 
 ion-tab-button {
   padding: 5px;
+}
+
+ion-item{
+  color: #041A59;
 }

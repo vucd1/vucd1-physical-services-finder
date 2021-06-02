@@ -5,7 +5,6 @@
 ion-toolbar {
     --background-color: transparent;
     --ion-color-base: transparent !important;
-    padding-top: 25px;
   }
 
   #toggle{
@@ -13,7 +12,8 @@ ion-toolbar {
     position: relative;
   }
 ion-searchbar {
-  margin: auto;
+  padding-top: 10%;
+  // margin: auto;
   // flex-basis: 2px;
   // float: left;
   --icon-color: #5A6DA4;
