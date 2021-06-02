@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-
 import { PopoverComponent } from '../popover/popover.component';
+import { BookmarksPage } from '../bookmarks/bookmarks.page';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-category-page',
@@ -19,16 +21,31 @@ searchResults:any;
 inputVal="";
 show=false; 
 resLen=0;
+booklist :BookmarksPage;
 
-constructor(public popoverController: PopoverController) { }
+constructor(public popoverController: PopoverController,public alertController: AlertController) { }
 
 
   ngOnInit() {
     this.getResults();
 
+
     console.log(this.libs);
   }
 
+  
+  onClick(event: Event){
+    let e = event.target as HTMLButtonElement;
+    if (this.libs[e.id].bookmark== true){
+      //this.libs[e.id].bookmark = false;
+      this.presentRemoveAlert(this.libs[e.id].name,e);
+    }
+    else{
+      this.libs[e.id].bookmark = true;
+      this.presentAlert(this.libs[e.id].name);
+
+    }
+  }
   async presentPopover(event: Event) {
     const popover = await this.popoverController.create({
       component: PopoverComponent,
@@ -63,9 +80,50 @@ constructor(public popoverController: PopoverController) { }
      console.log(this.searchResults);
      console.log("LEN",Object.keys(this.searchResults).length);
     
-
   }
 
+
+  async presentAlert(place : String) {
+    const alert = await this.alertController.create({
+      header: 'Sucess ',
+      message: place + ' added to bookmarks',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentRemoveAlert(place : String,e) {
+    const alert = await this.alertController.create({
+      header: 'Are you sure ',
+      message: place + ' will deleted from your bookmarks',
+      buttons: [{
+        text: 'Yes',
+        handler: () => {
+          console.log('Confirm Ok');
+          this.libs[e.id].bookmark = false;
+
+        }
+      },{
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Confirm Cancel');
+        }
+      }
+    ]
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+ 
 }
 
 
