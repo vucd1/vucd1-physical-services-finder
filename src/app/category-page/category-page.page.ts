@@ -15,11 +15,17 @@ export class CategoryPagePage implements OnInit {
 ,{"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":"2640ft", "bookmark": false}
 ,{"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":"3230 ft","bookmark": false}];
   
- constructor(public popoverController: PopoverController) { }
+searchResults:any;
+inputVal="";
+show=false; 
+resLen=0;
 
- //public libs = ["Langson","gateway"];
+constructor(public popoverController: PopoverController) { }
+
 
   ngOnInit() {
+    this.getResults();
+
     console.log(this.libs);
   }
 
@@ -36,4 +42,30 @@ export class CategoryPagePage implements OnInit {
     console.log('onDidDismiss resolved with role', role);
   }
 
+  filterItems(val) {
+    return this.libs.filter(item => {
+      this.resLen+=1
+      return item.name.toLowerCase().indexOf(val.toLowerCase()) > -1;
+    });
+  }
+  getResults(){
+    if(this.inputVal==""){
+      this.show=false;
+    }
+    else{
+      this.show=true
+    }
+     this.searchResults=this.filterItems(this.inputVal);
+      if(Object.keys(this.searchResults).length<1){
+        this.searchResults=[{"place":"No Results Found"}]
+      }
+     console.log("INput value:",this.inputVal)
+     console.log(this.searchResults);
+     console.log("LEN",Object.keys(this.searchResults).length);
+    
+
+  }
+
 }
+
+
