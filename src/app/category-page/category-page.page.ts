@@ -12,21 +12,23 @@ import { AlertController,ToastController  } from '@ionic/angular';
 })
 export class CategoryPagePage implements OnInit {
 
-  libs:any = [ {"img": '/assets/imgs/langsonLib.png', "name": 'Langson Library', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":"320 ft","bookmark": true}
-,{"img": '/assets/imgs/gscpic.png', "name": 'Gateway Study Center', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":"330 ft", "bookmark": false}
-,{"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":"2640ft", "bookmark": false}
-,{"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":"3230 ft","bookmark": false}];
+  libs:any = [ {"img": '/assets/imgs/langsonLib.png', "name": 'Langson Library', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":320,"bookmark": true}
+,{"img": '/assets/imgs/gscpic.png', "name": 'Gateway Study Center', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":330, "bookmark": false}
+,{"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":2640, "bookmark": false}
+,{"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":3230,"bookmark": false}];
   
 searchResults:any;
 inputVal="";
 show=false; 
 resLen=0;
+sortOP="2";
 
 constructor(public popoverController: PopoverController,public alertController: AlertController,public toastController: ToastController) { }
 
 
   ngOnInit() {
     this.getResults();
+    this.changeSort();
 
     console.log(this.libs);
   }
@@ -79,6 +81,46 @@ constructor(public popoverController: PopoverController,public alertController: 
      console.log(this.searchResults);
      console.log("LEN",Object.keys(this.searchResults).length);
     
+  }
+
+  changeSort()
+  {
+    console.log("entered change sort")
+    if(this.sortOP=="2"){
+
+      this.libs=this.libs.sort((obj1, obj2) => {
+        if (obj1.dist > obj2.dist) {
+            return 1;
+        }
+    
+        if (obj1.dist < obj2.dist) {
+            return -1;
+        }
+    
+        return 0;
+    });
+    }
+    else{
+     this.libs=this.libs.sort((obj1, obj2) => {
+      if (obj1.name > obj2.name) {
+          return 1;
+      }
+  
+      if (obj1.name < obj2.name) {
+          return -1;
+      }
+  
+      return 0;
+  });
+    console.log("after sort",this.libs);
+  }
+
+
+    /** this.sample.data.sort(function(first, second) {
+                return (first.tedad - second.tedad);
+            });
+            console.log(this.sample); */
+
   }
 
 
