@@ -1,22 +1,50 @@
-<ion-header no-border color="translucent">
-  <ion-toolbar >
-  <ion-searchbar animated mode="md" [(ngModel)]="inputVal"  color="light" placeholder="Search Location"></ion-searchbar>
 
-  <ion-buttons slot="end">  <button style="background-color: white;padding-left: 12%;">
-    <ion-icon (click)="presentPopover($event)" name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
-  </button></ion-buttons> 
-</ion-toolbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color = "primary" icon="chevron-back"></ion-back-button>
+      <ion-title mode="md" style="margin-left: 15%;">Libraries</ion-title>
+      <ion-buttons slot="end"><button style="background-color: white; margin-left: 60%;">
+        <ion-icon (click)="presentPopover($event)" name="ellipsis-vertical" size="small" style=" color: #5A6DA4; padding-left: 90%;"></ion-icon>
+      </button></ion-buttons> 
+    </ion-buttons>    
+  </ion-toolbar>
 </ion-header>
-<ion-content>
-  <h2>Libraries</h2>
-    
+
+
+<ion-content mode="md">
+  <ion-searchbar animated mode="md" [(ngModel)]="inputVal"  (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
+  <ion-list *ngIf="show === true">
+    <ion-item button detail = false *ngFor="let res of searchResults" >
+      {{res.name}}
+      <h6 style="color:gray;" slot="end">{{res.dist}} ft</h6>   
+
+    </ion-item>
+  </ion-list>
+
+  <ion-item style=" color: #5A6DA4;">
+    <ion-label>Sort:</ion-label> 
+    <ion-select [(ngModel)]="sortOP"  (ionChange)="changeSort()" mode="ios" overflow-scroll="false" interface="popover" value="2">
+      <ion-select-option value="1">Alphabetical</ion-select-option>
+      <ion-select-option value="2">Distance</ion-select-option>
+
+    </ion-select>
+    <!--<ion-button fill="clear">Default▼</ion-button>-->
+  </ion-item>
   <div *ngFor='let l of libs; let i = index' >
     <ion-card>
       <ion-card-content>
       <!-- <ion-card-header> -->
         <img src={{l.img}} width="70" height="70">
         <ion-card-title>{{l.name}} 
-          <h5>{{l.address}}</h5>        
+          <h5>{{l.address}}</h5> 
+          <h4  style="color:gray;">{{l.dist}} ft</h4>
+          <button class = "bookmarkBtns" *ngIf="l.bookmark==false">
+            <ion-icon id = {{i}} (click)="onClick($event)" name="bookmark" size="small" style="color:grey; outline: black;"></ion-icon>
+          </button>
+          <button class = "bookmarkBtns" *ngIf="l.bookmark==true">
+            <ion-icon id = {{i}} (click)="onClick($event)" name="bookmark" size="small" style="color:#2C488B; outline: black;"></ion-icon>
+          </button>
         </ion-card-title>
       <!-- </ion-card-header> -->
       </ion-card-content>
