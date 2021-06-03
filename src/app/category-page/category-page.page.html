@@ -18,7 +18,6 @@
     <ion-item button detail = false *ngFor="let res of searchResults" >
       {{res.name}}
       <h6 style="color:gray;" slot="end">{{res.dist}} ft</h6>   
-
     </ion-item>
   </ion-list>
 
@@ -32,6 +31,7 @@
     <!--<ion-button fill="clear">Default▼</ion-button>-->
   </ion-item>
   <div *ngFor='let l of libs; let i = index' >
+    <div *ngIf="l.category == 'lib'">
     <ion-card>
       <ion-card-content>
       <!-- <ion-card-header> -->
@@ -50,6 +50,7 @@
       </ion-card-content>
     </ion-card>
     </div>
+    </div>
 
 </ion-content>
 <ion-toolbar>
@@ -57,17 +58,17 @@
   <ion-tabs>
     <ion-tab-bar slot="bottom">
   
-      <ion-tab-button tab="home" routerLink="/home">
+      <ion-tab-button routerLink="/home">
         <ion-icon name="home-outline" size="small"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="search" routerLink="/search">
+      <ion-tab-button routerLink="/search">
         <ion-icon name="search-outline" size="small"></ion-icon>
         <ion-label>Search</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="bookmarks" routerLink="/bookmarks">
+      <ion-tab-button routerLink="/bookmarks">
         <ion-icon name="bookmark-outline" size="small"></ion-icon>
         <ion-label>Bookmarks</ion-label>
       </ion-tab-button>
