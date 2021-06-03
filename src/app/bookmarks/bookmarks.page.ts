@@ -14,15 +14,20 @@ import {LocationsData} from '../data/locations-data';
 export class BookmarksPage implements OnInit {
   bookmarked:any
   bookmarkedcopy:any
-  noneBookmarked = false;
+  noneBookmarked:boolean;
 
 
   
   constructor(public popoverController: PopoverController,public alertController: AlertController, locationsData: LocationsData) { 
     this.bookmarked = locationsData.getBookmarkedLocations();
-    
-    this.noneBookmarked = locationsData.noneBookmarked();
-    // this.bookmarkedcopy= this.bookmarked.slice()
+    this.bookmarkedcopy = [];
+    for (let i in this.bookmarked){
+      console.log(this.bookmarked[i]);
+      if (this.bookmarked[i].bookmark == true){
+        this.bookmarkedcopy.push(this.bookmarked[i])
+      }
+    }
+    console.log(this.bookmarkedcopy);
   }
 
   ngOnInit() {
@@ -58,7 +63,9 @@ export class BookmarksPage implements OnInit {
         handler: () => {
           console.log('Confirm Ok');
           this.bookmarked[e.id].bookmark = false;
-          // this.bookmarkedcopy.pop((this.bookmarked)[e.id]);
+          
+          this.bookmarkedcopy.pop((this.bookmarked)[e.id]);
+          console.log(this.bookmarkedcopy);
           
         }
       },{
