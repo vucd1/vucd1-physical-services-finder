@@ -3,6 +3,7 @@ import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { BookmarksPage } from '../bookmarks/bookmarks.page';
 import { AlertController,ToastController  } from '@ionic/angular';
+import {LocationsData} from '../data/locations-data';
 
 
 @Component({
@@ -25,7 +26,6 @@ sortOP="2";
 
 constructor(public popoverController: PopoverController,public alertController: AlertController,public toastController: ToastController) { }
 
-
   ngOnInit() {
     this.getResults();
     this.changeSort();
@@ -39,6 +39,7 @@ constructor(public popoverController: PopoverController,public alertController: 
     if (this.libs[e.id].bookmark== true){
       //this.libs[e.id].bookmark = false;
       this.presentRemoveAlert(this.libs[e.id].name,e);
+      
     }
     else{
       this.libs[e.id].bookmark = true;
@@ -126,7 +127,7 @@ constructor(public popoverController: PopoverController,public alertController: 
 
   async presentAlert(place : String) {
     const alert = await this.alertController.create({
-      header: 'Sucess ',
+      header: 'Success ',
       message: place + ' added to bookmarks',
       buttons: ['OK']
     });
@@ -167,7 +168,7 @@ constructor(public popoverController: PopoverController,public alertController: 
 
   async presentRemoveAlert(place : String,e) {
     const alert = await this.alertController.create({
-      header: 'Are you sure ',
+      header: 'Are you sure? ',
       message: place + ' will deleted from your bookmarks',
       buttons: [{
         text: 'Yes',
