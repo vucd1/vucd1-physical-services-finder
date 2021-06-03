@@ -21,21 +21,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'home',
-  //   pathMatch: 'full'
-  // },
   {
     path: 'bookmarks',
     loadChildren: () => import('./bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
   },
-  // {
-  //   path: 'profile',
-  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  // },
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)

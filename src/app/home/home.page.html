@@ -1,5 +1,4 @@
 <ion-header no-border color="translucent">
-
   <ion-toolbar >
     <ion-searchbar animated mode="md" [(ngModel)]="inputVal" (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
     <ion-list *ngIf="show === true">
@@ -14,7 +13,6 @@
 </ion-header>
 
   <ion-content >
-      
   <h2>Welcome</h2>
 
   <ion-grid>
@@ -80,17 +78,17 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
 
-    <ion-tab-button tab="home">
+    <ion-tab-button>
       <ion-icon name="home-outline" size="small"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="search" routerLink="/search">
+    <ion-tab-button routerLink="/search">
       <ion-icon name="search-outline" size="small"></ion-icon>
       <ion-label>Search</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="bookmarks" routerLink="/bookmarks">
+    <ion-tab-button routerLink="/bookmarks">
       <ion-icon name="bookmark-outline" size="small"></ion-icon>
       <ion-label>Bookmarks</ion-label>
     </ion-tab-button>

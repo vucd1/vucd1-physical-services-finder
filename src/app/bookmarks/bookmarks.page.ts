@@ -3,6 +3,7 @@ import { PopoverController } from '@ionic/angular';
 
 import { PopoverComponent } from '../popover/popover.component';
 import { AlertController, } from '@ionic/angular';
+import {LocationsData} from '../data/locations-data';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AlertController, } from '@ionic/angular';
 })
 export class BookmarksPage implements OnInit {
   bookmarked:any = [
-  {img: '/assets/imgs/langsonLib.png', name: 'Langson Library', address: '23 W Peltason Dr, Irvine CA 92670', bookmark: true},
+  // {img: '/assets/imgs/langsonLib.png', name: 'Langson Library', address: '23 W Peltason Dr, Irvine CA 92670', bookmark: true},
   {img: '/assets/imgs/fillingStation.png', name: 'Water Filling Station ', address: 'Rowland Hall, Near First Floor Elevator', bookmark: true}, 
   {img: '/assets/imgs/restroom.png', name: 'Restroom ', address: 'Anteater Recreation Center	Room #104', bookmark: true}, 
   {img: '/assets/imgs/PhoenixFoodCourt.png', name: 'Phoenix Food Court', address: 'Ring Rd, Irvine, CA 92697', bookmark: true},
@@ -48,13 +49,12 @@ export class BookmarksPage implements OnInit {
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 
 
   async presentRemoveAlert(e) {
     const alert = await this.alertController.create({
-      header: 'Are you sure ',
+      header: 'Are you sure?',
       message: this.bookmarked[e.id].name + ' will deleted from your bookmarks',
       buttons: [{
         text: 'Yes',
@@ -76,6 +76,6 @@ export class BookmarksPage implements OnInit {
     await alert.present();
 
     const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 }
+
