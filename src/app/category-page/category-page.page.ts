@@ -13,10 +13,10 @@ import {LocationsData} from '../data/locations-data';
 })
 export class CategoryPagePage implements OnInit {
 
-  libs:any = [ {"img": '/assets/imgs/langsonLib.png', "name": 'Langson Library', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":320,"bookmark": false}
-,{"img": '/assets/imgs/gscpic.png', "name": 'Grunigen Medical Library', "address": '101 The City Dr S, Orange, CA 92868',"dist":54330, "bookmark": false}
-,{"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":2640, "bookmark": false}
-,{"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":3230,"bookmark": false}];
+  libs:any = [ {'number':6, "img": '/assets/imgs/langsonLib.png', "name": 'Langson Library', "address": '23 W Peltason Dr, Irvine CA 92670',"dist":320,"bookmark": false}
+,{'number':7, "img": '/assets/imgs/gscpic.png', "name": 'Grunigen Medical Library', "address": '101 The City Dr S, Orange, CA 92868',"dist":54330, "bookmark": false}
+,{'number':8, "img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":2640, "bookmark": false}
+,{'number':9, "img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":3230,"bookmark": false}];
   
 searchResults:any;
 inputVal="";
@@ -24,9 +24,10 @@ show=false;
 resLen=0;
 sortOP="2";
 
-constructor(public popoverController: PopoverController,public alertController: AlertController,public toastController: ToastController) { }
+constructor(public popoverController: PopoverController,public alertController: AlertController,public toastController: ToastController, public locationsData: LocationsData) { }
 
   ngOnInit() {
+    this.libs = this.locationsData.getBookmarkedLocations();
     this.getResults();
     this.changeSort();
 
@@ -39,13 +40,15 @@ constructor(public popoverController: PopoverController,public alertController: 
     if (this.libs[e.id].bookmark== true){
       //this.libs[e.id].bookmark = false;
       this.presentRemoveAlert(this.libs[e.id].name,e);
-      
+     
     }
     else{
       this.libs[e.id].bookmark = true;
       //this.presentAlert(this.libs[e.id].name);
       this.presentToast(this.libs[e.id].name);
-
+      // console.log(this.libs[e.id]);
+      this.locationsData.addToBookmarked(this.libs[e.id].number);      
+      // console.log(this.locationsData.getBookmarkedLocations());
     }
   }
   async presentPopover(event: Event) {
@@ -58,7 +61,7 @@ constructor(public popoverController: PopoverController,public alertController: 
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    // console.log('onDidDismiss resolved with role', role);
   }
 
   filterItems(val) {
@@ -78,15 +81,15 @@ constructor(public popoverController: PopoverController,public alertController: 
       if(Object.keys(this.searchResults).length<1){
         this.searchResults=[{"place":"No Results Found"}]
       }
-     console.log("INput value:",this.inputVal)
-     console.log(this.searchResults);
-     console.log("LEN",Object.keys(this.searchResults).length);
+    //  console.log("INput value:",this.inputVal)
+    //  console.log(this.searchResults);
+    //  console.log("LEN",Object.keys(this.searchResults).length);
     
   }
 
   changeSort()
   {
-    console.log("entered change sort")
+    // console.log("entered change sort")
     if(this.sortOP=="2"){
 
       this.libs=this.libs.sort((obj1, obj2) => {
@@ -113,7 +116,7 @@ constructor(public popoverController: PopoverController,public alertController: 
   
       return 0;
   });
-    console.log("after sort",this.libs);
+    // console.log("after sort",this.libs);
   }
 
 
