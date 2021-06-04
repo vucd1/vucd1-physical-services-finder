@@ -16,7 +16,7 @@
   <ion-searchbar animated mode="md" [(ngModel)]="inputVal"  (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
   <ion-list *ngIf="show === true">
     <ion-item button detail = false *ngFor="let res of searchResults" >
-      {{res.name}}
+      <div *ngIf="res.name == Langson Library" routerLink="/search">{{res.name}}</div>
       <h6 style="color:gray;" slot="end">{{res.dist}} ft</h6>   
     </ion-item>
   </ion-list>
@@ -32,13 +32,13 @@
   </ion-item>
   <div *ngFor='let l of libs; let i = index' >
     <div *ngIf="l.category == 'lib'">
-    <ion-card>
+    <ion-card button (click)="getLib(l)">
       <ion-card-content>
       <!-- <ion-card-header> -->
-        <img src={{l.img}} width="70" height="70">
-        <ion-card-title>{{l.name}} 
-          <h5>{{l.address}}</h5> 
-          <h4  style="color:gray;">{{l.dist}} ft</h4>
+        <img src={{l.img}} (click)="getLib(l)" routerLink="/search" width="70" height="70">
+        <ion-card-title><div routerLink="/search" (click)="getLib(l)">{{l.name}}</div>
+          <h5 routerLink="/search" (click)="getLib(l)">{{l.address}}</h5> 
+          <h4  routerLink="/search" style="color:gray;" (click)="getLib(l)">{{l.dist}} ft</h4>
           <button class = "bookmarkBtns" *ngIf="l.bookmark==false">
             <ion-icon id = {{i}} (click)="onClick($event)" name="bookmark" size="small" style="color:grey; outline: black;"></ion-icon>
           </button>

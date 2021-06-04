@@ -43,9 +43,9 @@ export class HomePage {
       if(Object.keys(this.searchResults).length<1){
         this.searchResults=[{"place":"No Results Found"}]
       }
-     console.log("Input value:",this.inputVal)
-     console.log(this.searchResults);
-     console.log("LEN",Object.keys(this.searchResults).length);
+    //  console.log("Input value:",this.inputVal)
+    //  console.log(this.searchResults);
+    //  console.log("LEN",Object.keys(this.searchResults).length);
     
 
   }

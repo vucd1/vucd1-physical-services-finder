@@ -3,7 +3,9 @@
     <ion-searchbar animated mode="md" [(ngModel)]="inputVal" (ionChange)="getResults()" color="light" placeholder="Search Location"></ion-searchbar>
     <ion-list *ngIf="show === true">
       <ion-item button detail = false *ngFor="let res of searchResults" >
+        
         {{res.place}}
+        
       </ion-item>
     </ion-list>
     <ion-buttons slot="end">  <button style="background-color: white;padding-left: 12%;">

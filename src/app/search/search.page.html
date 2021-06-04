@@ -13,14 +13,15 @@
     <ion-icon (click)="presentPopover($event)" name="ellipsis-vertical" size="small" style=" color: #5A6DA4;"></ion-icon>
   </button></ion-buttons>  -->
   </ion-toolbar>
+  
   <div>
   <div id='toggle'><app-accessibility-toggle></app-accessibility-toggle></div>
+  
   <div #map id="map">
     <!-- <app-google-maps></app-google-maps> -->
     <!-- <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
   </div>
-  
 </div>
 
 <div>
@@ -28,7 +29,24 @@
 </div>
 
 
-<ion-fab (click)="changeMap()" vertical="bottom" horizontal="start" slot="fixed">
+
+<div *ngIf='showCard == true'>
+<ion-card >
+  <ion-card-header>
+    
+    <img src={{serviceImg}} width="83" height="70" style="float: left; padding-right: 1em;">
+    <h5 style="color: azure;">{{serviceName}}</h5> 
+    <p id="address" style="color: azure; text-align: center;">{{serviceAddress}}</p>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button id="directions" >Directions</ion-button><ion-button id="dismiss" (click)=onDismiss($event)>Dismiss</ion-button>
+    
+  </ion-card-content>
+</ion-card>
+</div>
+
+<ion-fab (click)="changeMap()" vertical="bottom" horizontal="start" slot="fixed" style="position: relative;">
   <ion-fab-button id = 'satellite'>
     <img [src]="'/assets/imgs/satellite.png'" width="40" height="40">
   </ion-fab-button>

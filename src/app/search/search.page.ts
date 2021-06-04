@@ -1,5 +1,6 @@
     import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+    
+    import {LocationsData} from '../data/locations-data';
     declare var google: any;
 
     @Component({
@@ -9,8 +10,11 @@
     })
     export class SearchPage implements OnInit {
       mapType: String;
-
-
+      showCard:boolean;
+      service:any;
+      serviceName: String;
+      serviceAddress: String;
+      serviceImg: String;
       map: any;
       @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
       infoWindows: any = [];
@@ -21,11 +25,18 @@
           longitude: "-117.84011195587281"
         }
       ];
-      constructor() { 
+      constructor(locationsData: LocationsData) { 
         this.mapType = 'terrain'
+        this.showCard = locationsData.getServiceOnSearch();
+        if (this.showCard == true){
+          this.serviceAddress = locationsData.getChosenService().address;
+          this.serviceImg = locationsData.getChosenService().img;
+          this.serviceName = locationsData.getServiceName();
+        }
       }
 
       ngOnInit() {
+        
       }
       ionViewDidEnter() {
         this.showMap();
@@ -94,11 +105,10 @@
           this.mapType = 'terrain'
 
         }
+      }
 
-
-
-
-        
+      onDismiss(event: Event){
+        this.showCard = false;
       }
 
 

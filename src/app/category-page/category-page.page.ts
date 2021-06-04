@@ -31,7 +31,7 @@ constructor(public popoverController: PopoverController,public alertController: 
     this.getResults();
     this.changeSort();
 
-    console.log(this.libs);
+    // console.log(this.libs);
   }
 
   
@@ -125,6 +125,16 @@ constructor(public popoverController: PopoverController,public alertController: 
             });
             console.log(this.sample); */
 
+  }
+
+  getLib(place: String){
+    this.locationsData.setServiceOnSearch();
+    this.locationsData.setChosenService(place);
+    this.locationsData.setChosenServicename();
+    // console.log(this.locationsData.getChosenService());
+    // console.log(this.locationsData.getServiceName());
+    // console.log(this.locationsData.getServiceOnSearch());
+    
   }
 
 

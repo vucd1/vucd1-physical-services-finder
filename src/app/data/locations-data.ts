@@ -7,6 +7,11 @@ import { Injectable } from '@angular/core';
 export class LocationsData {
     bookmarkedLocations:any
     noBookmarks:boolean
+    chosenService:any
+    serviceName:String
+    serviceSelected:boolean
+
+
     constructor() {
         this.bookmarkedLocations = [
         {number:1, img: '/assets/imgs/fillingStation.png', name: 'Water Filling Station ', address: 'Rowland Hall, Near First Floor Elevator', bookmark: true}, 
@@ -19,7 +24,9 @@ export class LocationsData {
         {number:8, category:'lib',"img": '/assets/imgs/scilibpic.png', "name": 'Science Library', "address": ' Loading Deck, Irvine CA 92617',"dist":2640, "bookmark": false},
         {number:9, category:'lib',"img": '/assets/imgs/Lawlib.png', "name": 'Law Library', "address": '401 E Peltason Dr #2000, Irvine CA 92697',"dist":3230,"bookmark": false}
         ];
+        this.serviceName = 'none';
         this.noBookmarks = true;
+        this.serviceSelected = false;
 	}
 
     public addToBookmarked(index:number){
@@ -45,4 +52,30 @@ export class LocationsData {
     public getBookmarkedLocations(){
         return this.bookmarkedLocations;
     }
+    
+    public setChosenServicename(){
+        this.serviceName = this.chosenService.name;
+    }
+
+    public setChosenService(service: any){
+        this.chosenService = service;
+    }
+
+    public getChosenService(){
+        return this.chosenService;
+    }
+
+    public getServiceName(){
+        return this.serviceName;
+    }
+
+    public setServiceOnSearch(){
+        this.serviceSelected = true;
+        return this.serviceSelected;
+    }
+
+    public getServiceOnSearch(){
+        return this.serviceSelected;
+    }
+
 }

@@ -18,21 +18,33 @@ export class BookmarksPage implements OnInit {
 
 
   
-  constructor(public popoverController: PopoverController,public alertController: AlertController, locationsData: LocationsData) { 
+  constructor(public popoverController: PopoverController,public alertController: AlertController, public locationsData: LocationsData) { 
     this.bookmarked = locationsData.getBookmarkedLocations();
+
     this.bookmarkedcopy = [];
     for (let i in this.bookmarked){
-      console.log(this.bookmarked[i]);
+      // console.log(this.bookmarked[i]);
       if (this.bookmarked[i].bookmark == true){
         this.bookmarkedcopy.push(this.bookmarked[i])
       }
     }
-    console.log(this.bookmarkedcopy);
+    // console.log(this.bookmarkedcopy);
   }
 
   ngOnInit() {
     
   }
+  
+  getPlace(place: String){
+    this.locationsData.setServiceOnSearch();
+    this.locationsData.setChosenService(place);
+    this.locationsData.setChosenServicename();
+    // // console.log(this.locationsData.getChosenService());
+    // // console.log(this.locationsData.getServiceName());
+    // // console.log(this.locationsData.getServiceOnSearch());
+    
+  }
+
 
   onClick(event: Event){
     let e = event.target as HTMLButtonElement;
@@ -40,6 +52,7 @@ export class BookmarksPage implements OnInit {
     // this.bookmarked[e.id].bookmark = false;
     // this.bookmarkedcopy.pop((this.bookmarked)[e.id]);
   }
+
   
   async presentPopover(event: Event) {
     const popover = await this.popoverController.create({
