@@ -109,6 +109,7 @@ ion-searchbar {
     padding-right: 1em;
     bottom: 3.17%;
     --background: azure !important;
+    --background-hover-opacity: 20%;
     color: #1C274C !important;
     border-radius: 9px;
     width: 110px;
@@ -120,6 +121,7 @@ ion-searchbar {
     border-radius: 9px;
     float:right;
     --background: rgba(255,255,255,0) !important;
+    --background-hover-opacity: 20%;
     opacity: 100%;
     color: azure;
     border: 2px solid #FFFFFF;
@@ -133,7 +135,7 @@ ion-searchbar {
   }
 
   ion-fab{
-    left: 13.2em;
+    left: 13.1em;
     top:14em;
   }
   
